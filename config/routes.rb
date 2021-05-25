@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :trainers, :workouts, :users, :exercises 
 
+  root 'users#new'
 end
