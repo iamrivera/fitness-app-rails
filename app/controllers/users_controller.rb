@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        create_user
+        create_trainer_or_athlete
     end
 
     def edit
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
         params.require(:user).permit(:name, :email, :user_type)
     end
 
-    def create_user
+    def create_trainer_or_athlete
         if user_params[:user_type] == "Trainer"
             @trainer = Trainer.find_or_create_by(name: user_params[:name], email: user_params[:email])
             redirect_to trainer_path(@trainer)
