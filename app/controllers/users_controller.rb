@@ -37,7 +37,7 @@ class UsersController < ApplicationController
             @athlete = Athlete.find_or_create_by(name: user_params[:name], email: user_params[:email])
             redirect_to athlete_path(@athlete)
         else
-            flash.alert == "Please let us know if you are a trainer or an athlete."
+            redirect_to :root, notice: "Please let us know if you are a trainer or an athlete."
         end
     end
 end
