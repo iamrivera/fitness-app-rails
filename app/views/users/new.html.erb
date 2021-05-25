@@ -1,2 +1,13 @@
-<h1> Hello Please Sign Up and indicate whether you are a trainer or an athlete </h1>
+<h1> Welcome to A1 Fitness  </h1>
 
+<%= form_for @user do |f| %> 
+    <%= f.label :name %> 
+    <%= f.text_field :name %> 
+
+    <%= f.label :email %>
+    <%= f.text_field :email %> 
+
+    <%= f.select :user_type, ["Trainer", "Athlete"] %>
+
+    <%= f.submit %>
+<% end %> 
