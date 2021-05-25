@@ -1,4 +1,4 @@
-class ClientsController < ApplicationController
+class UsersController < ApplicationController
     def index
 
     end
@@ -22,5 +22,4 @@ class ClientsController < ApplicationController
     def update
 
     end
-
 end
