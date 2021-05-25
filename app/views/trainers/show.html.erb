@@ -1,3 +1,34 @@
 <h1> Welcome <%= @trainer.name %>  </h1>
 
- 
+<fieldset>
+<legend> Create New Workout </legend>
+<%= form_for @workout do |f| %> 
+    <p>
+    <%= f.label :name %> 
+    <%= f.text_field :name %> 
+    </p>
+
+    <p>
+    <%= f.label :description %>
+    <%= f.text_area :description %> 
+    </p>
+
+    Exercises:
+    <ul> 
+        <%= f.fields_for :exercises do |exercise_form| %>
+            <li>
+            <%= exercise_form.label :name %>
+            <%= exercise_form.text_field :name %> 
+            </li>
+        <% end %> 
+    <%= f.submit %>
+</fieldset>
+
+<fieldset>
+<legend> Existing Workouts </legend>
+    <% @trainer.workouts do |workout| %> 
+        <li> workout </li>
+        <% end %>
+</fieldset>
+
+<% end %>

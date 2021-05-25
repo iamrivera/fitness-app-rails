@@ -5,6 +5,7 @@ class TrainersController < ApplicationController
 
     def show
         @trainer = Trainer.find(session[:id])
+        @workout = Workout.new
     end
 
     def new
