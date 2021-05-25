@@ -31,10 +31,11 @@ class UsersController < ApplicationController
 
     def create_trainer_or_athlete
         if user_params[:user_type] == "Trainer"
-            @trainer = Trainer.find_or_create_by(name: user_params[:name], email: user_params[:email])
+            @trainer = Trainer.find_or_create_by(first_name: user_params[:first_name], last_name: user_params[:last_name], username: user_params[:username], email: user_params[:email])
+            session[:id] = @trainer.id
             redirect_to trainer_path(@trainer)
         elsif user_params[:user_type] == "Athlete"
-            @athlete = Athlete.find_or_create_by(name: user_params[:name], email: user_params[:email])
+            @athlete = Athlete.find_or_create_by(first_name: user_params[:first_name], last_name: user_params[:last_name], username: user_params[:username], email: user_params[:email])
             redirect_to athlete_path(@athlete)
         else
             redirect_to :root, notice: "Please let us know if you are a trainer or an athlete."

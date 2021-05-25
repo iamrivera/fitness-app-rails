@@ -4,7 +4,7 @@ class TrainersController < ApplicationController
     end
 
     def show
-
+        @trainer = Trainer.find(session[:id])
     end
 
     def new
