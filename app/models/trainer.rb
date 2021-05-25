@@ -1,5 +1,6 @@
 class Trainer < ApplicationRecord
     has_many :workouts
+    has_many :athletes, through: :workouts
     accepts_nested_attributes_for :workouts
 
     def name

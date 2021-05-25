@@ -13,14 +13,6 @@
     <%= f.text_area :description %> 
     </p>
 
-    Exercises:
-    <ul> 
-        <%= f.fields_for :exercises do |exercise_form| %>
-            <li>
-            <%= exercise_form.label :name %>
-            <%= exercise_form.text_field :name %> 
-            </li>
-        <% end %> 
     <%= f.submit %>
 </fieldset>
 

@@ -12,7 +12,7 @@ class WorkoutsController < ApplicationController
     end
 
     def create
-
+        raise params.inspect
     end
 
     def edit
@@ -21,5 +21,10 @@ class WorkoutsController < ApplicationController
 
     def update
 
+    end
+
+    private 
+    def workout_params
+        params.require(:workout).permit(:name, :description, :exercise_ids => [], exercises_attributes:[:name, :reps, :description])
     end
 end
