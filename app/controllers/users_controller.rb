@@ -30,13 +30,14 @@ class UsersController < ApplicationController
     end
 
     def create_user
-        if user_params[:user_type] = "Trainer"
-            @trainer = Trainer.find_or_create_by(name: user_params[:name], email: user_params[:email], id: user_params[:id])
+        if user_params[:user_type] == "Trainer"
+            @trainer = Trainer.find_or_create_by(name: user_params[:name], email: user_params[:email])
             redirect_to trainer_path(@trainer)
-        elsif user_params[:user_type] = "Athlete"
-            flash.alert = "Model Pending"
+        elsif user_params[:user_type] == "Athlete"
+            @athlete = Athlete.find_or_create_by(name: user_params[:name], email: user_params[:email])
+            redirect_to athlete_path(@athlete)
         else
-            flash.alert = "Please let us know if you are a trainer or an athlete."
+            flash.alert == "Please let us know if you are a trainer or an athlete."
         end
     end
 end

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users do 
     resources :trainers 
   end
-  resources :trainers, :workouts, :users, :exercises 
+  resources :trainers, :workouts, :users, :exercises, :athletes
 
   root 'users#new'
 end
