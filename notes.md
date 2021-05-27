@@ -1,3 +1,19 @@
+GET / Register
+    should present a sign up form 
+
+POST / Users
+    create the user in database, maybe validates
+
+GET / Login
+    present a login form 
+
+Post / Login
+    create their session and redirect
+
+GET /pairs/new 
+    show a form to make a request of a pair 
+
+
 
 
   

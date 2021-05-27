@@ -2,10 +2,6 @@
 
 one:
   name: MyString
-  rating: 1
-  email: MyString
 
 two:
   name: MyString
-  rating: 1
-  email: MyString

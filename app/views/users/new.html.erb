@@ -1,0 +1,9 @@
+<h1> Registration Form </h1>
+
+<%= form_tag("/users") do |f| %> 
+    <%= label_tag "Name:" %> 
+    <%= text_field_tag "name" %> 
+
+    <%= submit_tag "Register" %> 
+
+<% end %> 
